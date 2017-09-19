@@ -2,8 +2,8 @@
 
 namespace PortalDev\Http\Controllers\Auth;
 
-use PortalDev\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use PortalDev\Http\Controllers\Controller;
 
 class ForgotPasswordController extends Controller
 {
