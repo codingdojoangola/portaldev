@@ -1,6 +1,6 @@
 <?php
 
-return [
+return array(
 
     /*
     |--------------------------------------------------------------------------
@@ -55,10 +55,10 @@ return [
     |
     */
 
-    'from' => [
+    'from' => array(
         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name'    => env('MAIL_FROM_NAME', 'Example'),
-    ],
+        'name' => env('MAIL_FROM_NAME', 'Example'),
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -112,12 +112,12 @@ return [
     |
     */
 
-    'markdown' => [
+    'markdown' => array(
         'theme' => 'default',
 
-        'paths' => [
+        'paths' => array(
             resource_path('views/vendor/mail'),
-        ],
-    ],
+        ),
+    ),
 
-];
+);
