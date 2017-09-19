@@ -2,8 +2,8 @@
 
 namespace PortalDev\Http\Controllers\Auth;
 
-use PortalDev\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use PortalDev\Http\Controllers\Controller;
 
 class ResetPasswordController extends Controller
 {
