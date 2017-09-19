@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -28,43 +28,43 @@ return array(
     |
     */
 
-    'connections' => array(
+    'connections' => [
 
-        'sync' => array(
+        'sync' => [
             'driver' => 'sync',
-        ),
+        ],
 
-        'database' => array(
-            'driver' => 'database',
-            'table' => 'jobs',
-            'queue' => 'default',
+        'database' => [
+            'driver'      => 'database',
+            'table'       => 'jobs',
+            'queue'       => 'default',
             'retry_after' => 90,
-        ),
+        ],
 
-        'beanstalkd' => array(
-            'driver' => 'beanstalkd',
-            'host' => 'localhost',
-            'queue' => 'default',
+        'beanstalkd' => [
+            'driver'      => 'beanstalkd',
+            'host'        => 'localhost',
+            'queue'       => 'default',
             'retry_after' => 90,
-        ),
+        ],
 
-        'sqs' => array(
+        'sqs' => [
             'driver' => 'sqs',
-            'key' => 'your-public-key',
+            'key'    => 'your-public-key',
             'secret' => 'your-secret-key',
             'prefix' => 'https://sqs.us-east-1.amazonaws.com/your-account-id',
-            'queue' => 'your-queue-name',
+            'queue'  => 'your-queue-name',
             'region' => 'us-east-1',
-        ),
+        ],
 
-        'redis' => array(
-            'driver' => 'redis',
-            'connection' => 'default',
-            'queue' => 'default',
+        'redis' => [
+            'driver'      => 'redis',
+            'connection'  => 'default',
+            'queue'       => 'default',
             'retry_after' => 90,
-        ),
+        ],
 
-    ),
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -77,9 +77,9 @@ return array(
     |
     */
 
-    'failed' => array(
+    'failed' => [
         'database' => env('DB_CONNECTION', 'mysql'),
-        'table' => 'failed_jobs',
-    ),
+        'table'    => 'failed_jobs',
+    ],
 
-);
+];

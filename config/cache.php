@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -28,52 +28,52 @@ return array(
     |
     */
 
-    'stores' => array(
+    'stores' => [
 
-        'apc' => array(
+        'apc' => [
             'driver' => 'apc',
-        ),
+        ],
 
-        'array' => array(
+        'array' => [
             'driver' => 'array',
-        ),
+        ],
 
-        'database' => array(
-            'driver' => 'database',
-            'table' => 'cache',
+        'database' => [
+            'driver'     => 'database',
+            'table'      => 'cache',
             'connection' => null,
-        ),
+        ],
 
-        'file' => array(
+        'file' => [
             'driver' => 'file',
-            'path' => storage_path('framework/cache/data'),
-        ),
+            'path'   => storage_path('framework/cache/data'),
+        ],
 
-        'memcached' => array(
-            'driver' => 'memcached',
+        'memcached' => [
+            'driver'        => 'memcached',
             'persistent_id' => env('MEMCACHED_PERSISTENT_ID'),
-            'sasl' => array(
+            'sasl'          => [
                 env('MEMCACHED_USERNAME'),
                 env('MEMCACHED_PASSWORD'),
-            ),
-            'options' => array(
+            ],
+            'options' => [
                 // Memcached::OPT_CONNECT_TIMEOUT  => 2000,
-            ),
-            'servers' => array(
-                array(
-                    'host' => env('MEMCACHED_HOST', '127.0.0.1'),
-                    'port' => env('MEMCACHED_PORT', 11211),
+            ],
+            'servers' => [
+                [
+                    'host'   => env('MEMCACHED_HOST', '127.0.0.1'),
+                    'port'   => env('MEMCACHED_PORT', 11211),
                     'weight' => 100,
-                ),
-            ),
-        ),
+                ],
+            ],
+        ],
 
-        'redis' => array(
-            'driver' => 'redis',
+        'redis' => [
+            'driver'     => 'redis',
             'connection' => 'default',
-        ),
+        ],
 
-    ),
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -91,4 +91,4 @@ return array(
         str_slug(env('APP_NAME', 'laravel'), '_').'_cache'
     ),
 
-);
+];

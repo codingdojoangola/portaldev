@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -13,9 +13,9 @@ return array(
     |
     */
 
-    'paths' => array(
+    'paths' => [
         resource_path('views'),
-    ),
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -30,4 +30,4 @@ return array(
 
     'compiled' => realpath(storage_path('framework/views')),
 
-);
+];

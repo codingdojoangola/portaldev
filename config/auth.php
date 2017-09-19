@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -13,10 +13,10 @@ return array(
     |
     */
 
-    'defaults' => array(
-        'guard' => 'web',
+    'defaults' => [
+        'guard'     => 'web',
         'passwords' => 'users',
-    ),
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -35,17 +35,17 @@ return array(
     |
     */
 
-    'guards' => array(
-        'web' => array(
-            'driver' => 'session',
+    'guards' => [
+        'web' => [
+            'driver'   => 'session',
             'provider' => 'users',
-        ),
+        ],
 
-        'api' => array(
-            'driver' => 'token',
+        'api' => [
+            'driver'   => 'token',
             'provider' => 'users',
-        ),
-    ),
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -64,17 +64,17 @@ return array(
     |
     */
 
-    'providers' => array(
-        'users' => array(
+    'providers' => [
+        'users' => [
             'driver' => 'eloquent',
-            'model' => PortalDev\User::class,
-        ),
+            'model'  => PortalDev\User::class,
+        ],
 
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
-    ),
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -91,12 +91,12 @@ return array(
     |
     */
 
-    'passwords' => array(
-        'users' => array(
+    'passwords' => [
+        'users' => [
             'provider' => 'users',
-            'table' => 'password_resets',
-            'expire' => 60,
-        ),
-    ),
+            'table'    => 'password_resets',
+            'expire'   => 60,
+        ],
+    ],
 
-);
+];
