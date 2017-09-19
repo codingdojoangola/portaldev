@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -28,31 +28,31 @@ return array(
     |
     */
 
-    'connections' => array(
+    'connections' => [
 
-        'pusher' => array(
-            'driver' => 'pusher',
-            'key' => env('PUSHER_APP_KEY'),
-            'secret' => env('PUSHER_APP_SECRET'),
-            'app_id' => env('PUSHER_APP_ID'),
-            'options' => array(
+        'pusher' => [
+            'driver'  => 'pusher',
+            'key'     => env('PUSHER_APP_KEY'),
+            'secret'  => env('PUSHER_APP_SECRET'),
+            'app_id'  => env('PUSHER_APP_ID'),
+            'options' => [
                 //
-            ),
-        ),
+            ],
+        ],
 
-        'redis' => array(
-            'driver' => 'redis',
+        'redis' => [
+            'driver'     => 'redis',
             'connection' => 'default',
-        ),
+        ],
 
-        'log' => array(
+        'log' => [
             'driver' => 'log',
-        ),
+        ],
 
-        'null' => array(
+        'null' => [
             'driver' => 'null',
-        ),
+        ],
 
-    ),
+    ],
 
-);
+];
