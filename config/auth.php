@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model'  => PortalDev\User::class,
+            'model'  => PortalDev\Models\User::class,
         ],
 
         // 'users' => [
