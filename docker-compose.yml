@@ -1,0 +1,77 @@
+# v2 sintax
+version: '2'
+
+# Named volumes
+volumes:
+  # MySQL Data
+#  portaldev-mysql-data:
+#    driver: local
+
+  # postgresql
+  portaldev-pgsql-data:
+    driver: local
+
+  # Redis Data
+  portaldev-redis-data:
+    driver: local
+
+services:
+  # MySQL (5.7)
+#  mysql:
+#    image: mysql:5.7
+#    container_name: portaldev-mysql
+#    volumes:
+#      - portaldev-mysql-data:/var/lib/mysql
+#    ports:
+#      - "3306:3306"
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=portaldev
+#      - MYSQL_DATABASE=portaldev
+#      - MYSQL_USER=portaldev
+#      - MYSQL_PASSWORD=portaldev
+
+  # Postresql (Alpine)
+  postgres:
+    image: postgres:alpine
+    container_name: portaldev-pgsql
+    volumes:
+      - portaldev-pgsql-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=portaldev
+      - POSTGRES_USER=portaldev
+      - POSTGRES_PASSWORD=portaldev
+
+  # Redis
+  cache:
+    image: ambientum/redis:3.2
+    container_name: portaldev-redis
+    command: --appendonly yes
+    volumes:
+      - portaldev-redis-data:/data
+    ports:
+      - "6379:6379"
+
+  # APP (with Caddy)
+  app:
+    image: ambientum/php:7.0-caddy
+    container_name: portaldev-app
+    volumes:
+      - .:/var/www/app
+    ports:
+      - "80:8080"
+    links:
+      - postgres
+      - cache
+
+  # Laravel Queues
+  queue:
+    image: ambientum/php:7.0
+    container_name: portaldev-queue
+    command: php artisan queue:listen
+    volumes:
+      - .:/var/www/app
+    links:
+      - postgres
+      - cache
