@@ -15,6 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Authentication routes
+Route::group(['prefix' => 'auth'], function() {
+    Auth::routes();
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Dashboard
+Route::group(['prefix', 'me', 'namespace' => 'Dashboard'], function() {
+    Route::get('/', 'HomeController@home')->name('dashboard');
+  /*  Route::group(['prefix' => 'settings'], function($setting) {
+        $setting->get('/', 'SettingsController@settings')->name('settings');
+        $setting->get('profile', 'SettingsController@settings')->name('settings.profile');
+        $setting->get('security', 'SettingsController@settings')->name('settings.security');
+    });*/
+});

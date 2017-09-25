@@ -2,7 +2,7 @@
 
 namespace PortalDev\Http\Controllers\Auth;
 
-use PortalDev\User;
+use PortalDev\Models\User;
 use PortalDev\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
@@ -48,10 +48,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'nome' => 'required|string|max:255',
-            'sobrenome' => 'required|string|max:255',
+            'nome' => 'required|string|max:40',
+            'sobrenome' => 'required|string|max:60',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:8|confirmed',
         ]);
     }
 
@@ -64,6 +64,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
+
             'nome' => $data['nome'],
             'sobrenome' => $data['sobrenome'],
             'usuario' => $data['usuario'],
