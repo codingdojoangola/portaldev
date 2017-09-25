@@ -17,7 +17,7 @@
                             <div class="col-md-6">
                                 <input id="nome" type="text" class="form-control" name="nome" value="{{ old('nome') }}" required autofocus>
 
-                                @if ($errors->has('npme'))
+                                @if ($errors->has('nome'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('nome') }}</strong>
                                     </span>
