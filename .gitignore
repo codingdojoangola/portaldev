@@ -6,6 +6,7 @@ npm-debug.log
 public/storage
 public/hot
 storage/*.key
+storage/debugbar
 .env.*.php
 .env.php
 .env
